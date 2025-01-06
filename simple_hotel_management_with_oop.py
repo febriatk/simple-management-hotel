@@ -78,14 +78,6 @@ class HotelManagement:
         else:
             print("\nTidak ada kamar yang tersedia.")
 
-    def room_status(self):
-        if self.rooms:
-            print("\nStatus Kamar:")
-            for room in self.rooms:
-                room.display()
-        else:
-            print("\nTidak ada kamar yang dipesan.")
-
     def edit(self):
         room_no = int(input("\nMasukkan nomor kamar lama: "))
         for room in self.rooms:
@@ -152,7 +144,6 @@ def main():
         print("5. Edit Data")
         print("6. Check-Out Kamar")
         print("7. Melihat Riwayat Pemesanan")
-        print("8. Melihat Daftar Kamar")
         print("0. Keluar")
         print("________________________________")
         choice = int(input("\nMasukkan Pilihan Anda: "))
@@ -160,7 +151,7 @@ def main():
         if choice == 1:
             hotel_management.allot_room()
         elif choice == 2:
-            hotel_management.room_status()
+            hotel_management.available_room_status()
         elif choice == 3:
             hotel_management.room_info()
         elif choice == 4:
@@ -171,8 +162,6 @@ def main():
             hotel_management.leave_room()
         elif choice == 7:
             hotel_management.old_records()
-        elif choice == 8:
-            hotel_management.available_room_status()
         elif choice == 0:
             print("\nSELAMAT TINGGAL!")
             break
